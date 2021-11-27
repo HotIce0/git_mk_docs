@@ -20,6 +20,9 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
+    class Meta:
+        db_table = 't_user'
+
     USERNAME_FIELD = 'username'
     objects = UserManager()
 
