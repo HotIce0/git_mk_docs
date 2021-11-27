@@ -132,4 +132,4 @@ dmypy.json
 .idea/
 
 # django dev settings
-settings.dev.py
+settings_dev.py
