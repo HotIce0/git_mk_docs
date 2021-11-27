@@ -130,3 +130,6 @@ dmypy.json
 
 # pycahrm project config or cache
 .idea/
+
+# django dev settings
+settings.dev.py
