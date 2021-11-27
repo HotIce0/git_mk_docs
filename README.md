@@ -5,7 +5,7 @@
 1. 通过git仓库管理文档
 2. 文档的更新，通过git仓库的授权进行控制
 3. 平台已缓存的文档的查看，通过该平台的权限管理进行控制
-   1. 每个仓库支持创建共享仓库(repo_shared)
+   1. 每个仓库支持创建共享仓库(shared_repository)
    2. 每个共享仓库支持设置是否公开或者指定用户可读
 4. 支持收藏仓库
 
@@ -41,16 +41,16 @@
 - git_ssh_url
   - type: varchar(4096)
 - create_at:
-  - type: date
+  - type: datetime
 - update_at
-  - type: date
+  - type: datetime
 - update_msg
   - type: varchar(4096)
 
-> 共享仓库表(t_repo_shared)
+> 共享仓库表(t_shared_repo)
 - id
 - repo_id
-  - ref: t_shared(id)
+  - ref: t_repository(id)
 - user_id
   - ref: t_user(id)
 - name
@@ -60,29 +60,29 @@
 - branch
   - type: varchar(512)
 - create_at
-  - type: date
+  - type: datetime
 - update_at
-  - type: date
+  - type: datetime
 - update_msg
   - type: varchar(4096)
     
-> 共享仓库读访问权限控制表(t_repo_shared_read_access)
+> 共享仓库读访问权限控制表(t_shared_repo_access_ctrl)
 - id
 - user_id
   - ref: t_user(id)
-- repo_shared_id
-  - ref: t_repo_shared(id)
+- shared_repo_id
+  - ref: t_shared_repo(id)
 - expired_at
-  - type: date
+  - type: datetime
 
-> 共享仓库收藏表(t_repo_shared_star)
+> 共享仓库收藏表(t_shared_repo_star)
 - id
 - user_id
   - ref: t_user(id)
-- repo_shared_id
-  - ref: t_repo_shared(id)
+- shared_repo_id
+  - ref: t_shared_repo(id)
 - create_at
-  - type: date
+  - type: datetime
 
 # 四、各流程
 1. 注册
