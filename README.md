@@ -1,4 +1,4 @@
-# 一、关于 git_mk_docs
+# 一、关于 git_mk_docs[目前不可构建成功]
 通过git管理存储的markdown文档写作管理平台。
 
 # 二、设计
@@ -16,14 +16,14 @@
 # 三、数据表设计
 > 用户表(t_user)
 - id
-- nick
-  - varchar(32)
-- email
-  - type: varchar(2048)
 - username
   - type: varchar(32) 
   - prop: unique
 - password
+- nick
+  - varchar(32)
+- email
+  - type: varchar(2048)
 - ssh_key_public
   - type: varchar(4096)
 - ssh_key_private
