@@ -65,6 +65,9 @@
   - type: datetime
 - update_msg
   - type: varchar(4096)
+- is_public
+  - type: int
+  - value: 非0任何人可以访问，0需要所有者授权
     
 > 共享仓库读访问权限控制表(t_shared_repo_access_ctrl)
 - id
