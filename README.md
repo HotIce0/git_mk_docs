@@ -1,2 +1,2 @@
-# ht_docs
+# git_mk_docs
 Documents manager.
